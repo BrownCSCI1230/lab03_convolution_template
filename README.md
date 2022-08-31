@@ -1,2 +1,3 @@
-# Convolution
-Welcome to Lab 3 Convolution! The handout for this lab is located [here](https://browncsci1230.github.io/labs/lab3).
+# Lab 3: Convolution
+
+Welcome to Lab 3! The handout for the lab is located [here](https://browncsci1230.github.io/labs/lab3).
