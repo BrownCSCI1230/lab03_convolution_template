@@ -48,7 +48,7 @@ qt_add_resources(${PROJECT_NAME} "Resources"
   Fun_Images/wimdy.jpg
 )
 
-# Specifies libraries to be linked (Qt components, glew, glm, etc)
+# Specifies libraries to be linked (Qt components, glew, etc)
 target_link_libraries(${PROJECT_NAME} PRIVATE
   Qt::Core
   Qt::Widgets
