@@ -17,22 +17,27 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Gui)
 
+# Allows you to include files from within those directories, without prefixing their filepaths
+include_directories(src)
+
 # Specifies .cpp and .h files to be passed to the compiler
 add_executable(${PROJECT_NAME}
-  Convolution/main.cpp
-  Convolution/mainwindow.h
-  Convolution/mainwindow.cpp
-  Convolution/settings.h
-  Convolution/settings.cpp
-  Convolution/RGBA.h
-  Convolution/canvas2d.h
-  Convolution/canvas2d.cpp
-  Convolution/filters/FilterGray.cpp
-  Convolution/filters/FilterIdentity.cpp
-  Convolution/filters/FilterInvert.cpp
-  Convolution/filters/FilterShift.cpp
-  Convolution/filters/filterutils.h
-  Convolution/filters/filterutils.cpp
+  src/main.cpp
+  
+  src/mainwindow.cpp
+  src/settings.cpp
+  src/canvas2d.cpp
+  src/filters/filterGray.cpp
+  src/filters/filterIdentity.cpp
+  src/filters/filterInvert.cpp
+  src/filters/filterShift.cpp
+  src/filters/filterutils.cpp
+  
+  src/mainwindow.h
+  src/settings.h
+  src/RGBA.h
+  src/canvas2d.h
+  src/filters/filterutils.h
 )
 
 # Specifies other files
@@ -40,12 +45,12 @@ qt_add_resources(${PROJECT_NAME} "Resources"
   PREFIX
   "/"
   FILES
-  Fun_Images/amongus.jpg
-  Fun_Images/capybara.jpeg
-  Fun_Images/graphics_meme.png
-  Fun_Images/mona_lisa.jpg
-  Fun_Images/rtx_meme.jpeg
-  Fun_Images/wimdy.jpg
+  resources/amongus.jpg
+  resources/capybara.jpeg
+  resources/graphics_meme.png
+  resources/mona_lisa.jpg
+  resources/rtx_meme.jpeg
+  resources/wimdy.jpg
 )
 
 # Specifies libraries to be linked (Qt components, glew, etc)
