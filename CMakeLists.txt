@@ -27,10 +27,10 @@ add_executable(${PROJECT_NAME}
   src/mainwindow.cpp
   src/settings.cpp
   src/canvas2d.cpp
-  src/filters/filterGray.cpp
-  src/filters/filterIdentity.cpp
-  src/filters/filterInvert.cpp
-  src/filters/filterShift.cpp
+  src/filters/filtergray.cpp
+  src/filters/filteridentity.cpp
+  src/filters/filterinvert.cpp
+  src/filters/filtershift.cpp
   src/filters/filterutils.cpp
   
   src/mainwindow.h
