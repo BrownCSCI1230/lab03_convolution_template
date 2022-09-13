@@ -49,7 +49,7 @@ bool Canvas2D::loadImageFromFile(const QString &file){
  * @brief Get Canvas2D's image data and display this to the GUI
  */
 void Canvas2D::displayImage() {
-    QByteArray* img = new QByteArray(reinterpret_cast<const char*>(m_data.data()), 4*m_data.size());
+    QByteArray img(reinterpret_cast<const char*>(m_data.data()), 4*m_data.size());
     QImage now = QImage((const uchar*)img->data(), getWidth(), getHeight(), QImage::Format_RGBX8888);
     this->setPixmap(QPixmap::fromImage(now));
     this->setFixedSize(m_canvasW, m_canvasH);
