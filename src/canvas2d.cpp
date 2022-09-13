@@ -15,7 +15,7 @@ void Canvas2D::loadBlackImage() {
 }
 
 void Canvas2D::filterImage() {
-    // [TODO]: Task 1 -- Call the appropriate filter function depending
+    // Task 1: Call the appropriate filter function depending
     //         on the settings
 
 }

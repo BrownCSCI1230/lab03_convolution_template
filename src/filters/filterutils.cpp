@@ -53,7 +53,7 @@ void convolve2D(std::vector<RGBA>* data, int width, int height, const std::vecto
         for (int c = 0; c < width; c++) {
             size_t centerIndex = r * width + c;
 
-            // Task 8
+            // Task 8:
             // 1. Initialize red_acc, green_acc, and blue_acc float variables
             // 2. Iterate over the kernel using kernel dimensions from Task 7.
             //    - Get the value of the current kernel element.
