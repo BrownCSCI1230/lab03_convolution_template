@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <memory>
 
 using namespace std;
