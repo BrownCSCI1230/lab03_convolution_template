@@ -1,6 +1,5 @@
 #include "canvas2d.h"
 #include "filterutils.h"
-#include <iostream>
 
 void Canvas2D::filterIdentity() {
     // Task 12: Create an identity kernel. This square kernel can be of any
