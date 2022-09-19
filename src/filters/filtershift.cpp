@@ -9,6 +9,6 @@ void createShiftKernel(ShiftDirection shiftDir, std::vector<float> &kernel, int 
 void Canvas2D::filterShift(ShiftDirection shiftDir) {
     // Task 14: Create your shift kernel depending on shiftDir
 
-    // Task 15: Using the kernel you made in Task 15 and the Canvas2D's
+    // Task 15: Using the kernel you made in task 15 and the Canvas2D's
     //          canvas data, call FilterUtils::Convolve2D()
 }
