@@ -5,63 +5,65 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
-#include <memory>
-
-using namespace std;
+#include <vector>
 
 namespace FilterUtils {
 
-inline std::uint8_t real2Byte(float f) {
-    int i = static_cast<int>((f * 255.0 + 0.5));
-    return (i < 0) ? 0 : (i > 255) ? 255 : i;
+inline std::uint8_t floatToUint8(float x) {
+    return round(x * 255.f);
 }
 
-/**
- * @brief getPixelReplicated(), getPixelReflected(), and getPixelWrapped() all have the same
- * input parameters:
- *
- * data - original image data
- * width - image width
- * height - image height
- * row - the current row of the image
- * col - the current col of the image
- */
-inline RGBA getPixelReplicated(std::vector<RGBA> &data, int width, int height, int row, int col) {
-    int x = (col < 0) ? 0 : min(col, width - 1);
-    int y = (row < 0) ? 0 : min(row, height - 1);
-    RGBA replicated = data[width * y + x];
-    return replicated;
+// getPixelRepeated(), getPixelReflected(), and getPixelWrapped() all
+// have the same input arguments:
+//
+// data   - the image's data
+// width  - the image's width
+// height - the image's height
+// x      - the x coordinate of the pixel you're attempting to access
+// y      - the y coordinate of the pixel you're attempting to access
+
+// Repeats the pixel on the edge of the image such that A,B,C,D looks like ...A,A,A,B,C,D,D,D...
+RGBA getPixelRepeated(std::vector<RGBA> &data, int width, int height, int x, int y) {
+    int newX = (x < 0) ? 0 : std::min(x, width  - 1);
+    int newY = (y < 0) ? 0 : std::min(y, height - 1);
+    return data[width * newY + newX];
 }
 
-inline RGBA getPixelReflected(std::vector<RGBA> &data, int width, int height, int row, int col) {
+// Flips the edge of the image such that A,B,C,D looks like ...C,B,A,B,C,D,C,B...
+RGBA getPixelReflected(std::vector<RGBA> &data, int width, int height, int x, int y) {
     // Task 9: implement this function
+
+    return RGBA{0, 0, 0, 255};
 }
 
-inline RGBA getPixelWrapped(std::vector<RGBA> &data, int width, int height, int row, int col) {
-    int x = (col < 0) ? col + width : col % width;
-    int y = (row < 0) ? row + height : row % height;
-    RGBA wrapped = data[width * y + x];
-    return wrapped;
+// Wraps the image such that A,B,C,D looks like ...C,D,A,B,C,D,A,B...
+RGBA getPixelWrapped(std::vector<RGBA> &data, int width, int height, int x, int y) {
+    int newX = (x < 0) ? x + width  : x % width;
+    int newY = (y < 0) ? y + height : y % height;
+    return data[width * newY + newX];
 }
 
+// Assumes the input kernel is square, and has an odd-numbered side length
 void convolve2D(std::vector<RGBA> &data, int width, int height, const std::vector<float> &kernel) {
-    // Task 6: initialize an array buffer, called `result`, to store RGBA image data
+    // Task 6: initialize a vector, called `result`, to temporarily store your output image data
 
-    // Task 7: obtain the kernel dimension
+    // Task 7: obtain the kernel's dimensions
 
     for (int r = 0; r < height; r++) {
         for (int c = 0; c < width; c++) {
             size_t centerIndex = r * width + c;
 
             // Task 8:
-            // 1. Initialize red_acc, green_acc, and blue_acc float variables
-            // 2. Iterate over the kernel using kernel dimensions from task 7.
-            //    - Get the value of the current kernel element.
-            //    - Get the value of the corresponding RGBA pixel.
-            // 3. Accumulate the kernel applied to pixel value in red_acc, green_acc, blue_acc
+            // 1. Initialize redAcc, greenAcc, and blueAcc float variables
+            // 2. Iterate over the kernel using its dimensions from task 7.
+            //    - Get the value, called `weight`, of the kernel at some position.
+            //      - Remember that we're doing convolution, so we must "flip" the
+            //        given kernel. How can you do that through (clever) indexing?
+            //    - Get the value, called `pixel`, of the corresponding pixel in the canvas.
+            // 3. Accumulate `weight * pixel` for each channel in redAcc, greenAcc, and blueAcc accordingly
 
             // Task 10: Update buffer with the new RGBA pixel value created from
-            //          red_acc, green_acc, and blue_acc
+            //          redAcc, greenAcc, and blueAcc
         }
     }
 

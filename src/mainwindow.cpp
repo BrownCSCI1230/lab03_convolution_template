@@ -9,33 +9,33 @@
  * @brief Parses command line arguments
  */
 void MainWindow::parseCLIAndLoadSettings(QStringList args) {
-    std::string filtertype = "";
+    std::string filterType = "";
     if (args.count() > 1) {
-        filtertype = args.at(1).toStdString();
+        filterType = args.at(1).toStdString();
     }
 
     FilterType ft = FILTER_NONE;
-    if (filtertype == "grayscale") {
+    if (filterType == "grayscale") {
         filterType_label->setText("Grayscale Filter");
         ft = FILTER_GRAYSCALE;
     }
-    else if (filtertype == "identity") {
+    else if (filterType == "identity") {
         filterType_label->setText("Identity Filter");
         ft = FILTER_IDENTITY;
     }
-    else if (filtertype == "invert") {
+    else if (filterType == "invert") {
         filterType_label->setText("Invert Filter");
         ft = FILTER_INVERT;
     }
-    else if (filtertype == "shiftLeft") {
+    else if (filterType == "shiftLeft") {
         filterType_label->setText("Shift Left Filter");
         ft = FILTER_SHIFT_LEFT;
     }
-    else if (filtertype == "shiftRight") {
+    else if (filterType == "shiftRight") {
         filterType_label->setText("Shift Right Filter");
         ft = FILTER_SHIFT_RIGHT;
     } else {
-        std::cout << "Unknown Filter type: " << filtertype << std::endl;
+        std::cout << "Unknown filter type: \"" << filterType << "\"" << std::endl;
     }
 
     settings.loadSettingsOrDefaults(ft);

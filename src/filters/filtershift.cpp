@@ -1,14 +1,23 @@
 #include "canvas2d.h"
 #include "filterutils.h"
 
-void createShiftKernel(ShiftDirection shiftDir, std::vector<float> &kernel, int num) {
-    // [Optional] Implement this function that creates a shift kernel that shifts an image
-    // by `num` pixels
+std::vector<float> createShiftKernel(ShiftDirection shiftDir, int num) {
+    std::vector<float> kernel;
+
+    // [Optional] Implement this function that creates a shift kernel
+    //            which can shift an image by `num` pixels
+
+    return kernel; // Note: this creates and returns a copy
 }
 
 void Canvas2D::filterShift(ShiftDirection shiftDir) {
-    // Task 14: Create your shift kernel depending on shiftDir
+    // Task 14: Create your shift kernel, depending on shiftDir. Alternatively, you 
+    //          may implement and call createShiftKernel().
+    //
+    // Remember:
+    // - we're doing convolution, not correlation, and
+    // - your kernel must be square, with an odd-numbered side length
 
     // Task 15: Using the kernel you made in task 15 and the Canvas2D's
-    //          canvas data, call FilterUtils::Convolve2D()
+    //          canvas data, call FilterUtils::convolve2D()
 }
