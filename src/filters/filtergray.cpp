@@ -12,21 +12,21 @@ std::uint8_t rgbaToGray(const RGBA &pixel) {
 }
 
 void Canvas2D::filterGray() {
-    RGBA* current_pixel = nullptr;
-    size_t currentIndex = 0;
+    // For each row
+    for (int r = 0; r < m_canvasH; ++r) {
+        size_t currentIndex = r * m_canvasW;
+        RGBA &currentPixel = m_data[currentIndex];
 
-    for (int r = 0; r < m_canvasH; r++) {
-        currentIndex = r * m_canvasW;
-        current_pixel = &m_data[currentIndex];
+        // For each column
+        for (int c = 0; c < m_canvasW; ++c) {
 
-        for (int c = 0; c < m_canvasW; c++) {
             // Task 2: call RGBAToGray()
 
-            // Task 4: Update the current_pixel's color
+            // Task 4: Update the currentPixel's color
 
             // Advance to the next pixel
-            current_pixel++;
             currentIndex++;
+            currentPixel = m_data[currentIndex];
         }
     }
 }
