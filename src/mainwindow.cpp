@@ -116,7 +116,7 @@ void MainWindow::connectButtons() {
  * the filtered image.
  */
 void MainWindow::onFilterButtonClick() {
-    m_canvas->filterImage();
+    m_canvas->applyFilter();
     m_canvas->displayImage();
 }
 

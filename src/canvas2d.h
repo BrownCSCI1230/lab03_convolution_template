@@ -21,7 +21,7 @@ public:
     std::vector<RGBA> &getImage() { return m_data; }
 
     // TODO: Implement the functions below
-    void filterImage();
+    void applyFilter();
     void filterGray();
     void filterInvert();
     void filterIdentity();
