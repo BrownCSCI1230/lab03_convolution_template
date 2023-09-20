@@ -2,11 +2,15 @@
 #include "filterutils.h"
 
 void Canvas2D::filterIdentity() {
-    // Task 12: Create an identity kernel. This square kernel can be of any
-    //          odd dimension you want, but we recommend something small like a
-    //          3x3 or 5x5 to reduce the amount of convolution computation required.
-    //          While technically correct, please don't create a 1x1 kernel.
+    // Task 12: We have created an identity kernel and called your FilterUtils::convolve2D()
+    //          with it. However, the identity kernel is not returning the original image.
+    //          Fix this code such that convolving with the identity kernel returns the original image.
 
-    // Task 13: Using the kernel you made in task 13 and the Canvas2D's
-    //          canvas data, call FilterUtils::convolve2D()
+    std::vector<float> kernel = {
+      0,    0,    0,
+      0,  1/9.f,  0,
+      0,    0,    0
+    };
+
+    FilterUtils::convolve2D(m_data, m_canvasW, m_canvasH, kernel);
 }
