@@ -38,6 +38,7 @@ add_executable(${PROJECT_NAME}
   src/RGBA.h
   src/canvas2d.h
   src/filters/filterutils.h
+  src/filters/filterbrighten.cpp
 )
 
 # Specifies other files

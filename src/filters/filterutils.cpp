@@ -31,7 +31,7 @@ RGBA getPixelRepeated(std::vector<RGBA> &data, int width, int height, int x, int
 
 // Flips the edge of the image such that A,B,C,D looks like ...C,B,A,B,C,D,C,B...
 RGBA getPixelReflected(std::vector<RGBA> &data, int width, int height, int x, int y) {
-    // Task 9: implement this function
+    // Task 12: implement this function
 
     return RGBA{0, 0, 0, 255};
 }
@@ -45,29 +45,29 @@ RGBA getPixelWrapped(std::vector<RGBA> &data, int width, int height, int x, int 
 
 // Assumes the input kernel is square, and has an odd-numbered side length
 void convolve2D(std::vector<RGBA> &data, int width, int height, const std::vector<float> &kernel) {
-    // Task 6: initialize a vector, called `result`, to temporarily store your output image data
+    // Task 9: initialize a vector, called `result`, to temporarily store your output image data
 
-    // Task 7: obtain the kernel's dimensions
+    // Task 10: obtain the kernel's dimensions
 
     for (int r = 0; r < height; r++) {
         for (int c = 0; c < width; c++) {
             size_t centerIndex = r * width + c;
 
-            // Task 8:
+            // Task 11:
             // 1. Initialize redAcc, greenAcc, and blueAcc float variables
-            // 2. Iterate over the kernel using its dimensions from task 7.
+            // 2. Iterate over the kernel using its dimensions from task 10.
             //    - Get the value, called `weight`, of the kernel at some position.
             //      - Remember that we're doing convolution, so we must "flip" the
             //        given kernel. How can you do that through (clever) indexing?
             //    - Get the value, called `pixel`, of the corresponding pixel in the canvas.
             // 3. Accumulate `weight * pixel` for each channel in redAcc, greenAcc, and blueAcc accordingly
 
-            // Task 10: Update buffer with the new RGBA pixel value created from
+            // Task 13: Update buffer with the new RGBA pixel value created from
             //          redAcc, greenAcc, and blueAcc
         }
     }
 
-    // Task 11: Copy the RGBA data from `result` (task 6) to `data`
+    // Task 14: Copy the RGBA data from `result` (task 9) to `data`
 }
 
 }
