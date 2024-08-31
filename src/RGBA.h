@@ -27,7 +27,7 @@ struct RGBAf {
     }
 
     static RGBAf fromRGBA(RGBA pixel) {
-        // TODO: Uncomment after Task 8!
+        // TODO: Uncomment after Task 7!
         // return RGBAf{ float(pixel.r), float(pixel.g), float(pixel.b), float(pixel.a) };
     }
 
