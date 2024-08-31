@@ -12,6 +12,7 @@ void Canvas2D::filterBrighten() {
             // Task 7: Convert currentPixel to an RGBAf struct and perform the multiplication here instead
 
             // Task 8: Use the toRGBA() method to convert the final pixel back to RGBA
+
         }
     }
 }
