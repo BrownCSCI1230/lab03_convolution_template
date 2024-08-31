@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <algorithm>
 
 struct RGBA {
     std::uint8_t r;

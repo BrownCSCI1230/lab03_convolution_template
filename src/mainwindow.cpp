@@ -34,6 +34,10 @@ void MainWindow::parseCLIAndLoadSettings(QStringList args) {
     else if (filterType == "shiftRight") {
         filterType_label->setText("Shift Right Filter");
         ft = FILTER_SHIFT_RIGHT;
+    }
+    else if (filterType == "brighten") {
+        filterType_label->setText("Brighten Filter");
+        ft = FILTER_BRIGHTEN;
     } else {
         std::cout << "Unknown filter type: \"" << filterType << "\"" << std::endl;
     }
