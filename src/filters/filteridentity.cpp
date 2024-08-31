@@ -2,7 +2,7 @@
 #include "filterutils.h"
 
 void Canvas2D::filterIdentity() {
-    // Task 12: We have created an identity kernel and called your FilterUtils::convolve2D()
+    // Task 15: We have created an identity kernel and called your FilterUtils::convolve2D()
     //          with it. However, the identity kernel is not returning the original image.
     //          Fix this code such that convolving with the identity kernel returns the original image.
 

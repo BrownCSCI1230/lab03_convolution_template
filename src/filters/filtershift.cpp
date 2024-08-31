@@ -11,13 +11,13 @@ std::vector<float> createShiftKernel(ShiftDirection shiftDir, int num) {
 }
 
 void Canvas2D::filterShift(ShiftDirection shiftDir) {
-    // Task 13: Create your shift kernel, depending on shiftDir. Alternatively, you
+    // Task 16: Create your shift kernel, depending on shiftDir. Alternatively, you
     //          may implement and call createShiftKernel().
     //
     // Remember:
     // - we're doing convolution, not correlation, and
     // - your kernel must be square, with an odd-numbered side length
 
-    // Task 14: Using the kernel you made in task 15 and the Canvas2D's
+    // Task 17: Using the kernel you made in task 15 and the Canvas2D's
     //          canvas data, call FilterUtils::convolve2D()
 }

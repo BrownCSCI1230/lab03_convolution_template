@@ -24,6 +24,7 @@ public:
     void applyFilter();
     void filterGray();
     void filterInvert();
+    void filterBrighten();
     void filterIdentity();
     void filterShift(ShiftDirection shiftDir);
 
