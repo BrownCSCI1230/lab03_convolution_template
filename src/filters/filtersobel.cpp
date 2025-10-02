@@ -2,15 +2,26 @@
 #include "filterutils.h"
 
 void Canvas2D::filterSobel() {
-    // Task 15: We have created an identity kernel and called your FilterUtils::convolve2D()
-    //          with it. However, the identity kernel is not returning the original image.
-    //          Fix this code such that convolving with the identity kernel returns the original image.
+    // Task A: Create your two sobel kernels, Gx (for the x-direction derivative),
+    //         and Gy (for the y-direction derivative).
 
-    std::vector<float> kernel = {
+    std::vector<float> Gx = {
         0,    0,    0,
         0,    0,    0,
         0,    0,    0
     };
 
-    FilterUtils::convolve2D(m_data, m_canvasW, m_canvasH, kernel);
+    std::vector<float> Gy = {
+        0,    0,    0,
+        0,    0,    0,
+        0,    0,    0
+    };
+
+    // Task B: Using two copies of your image, call convolve2d() twice, once with each
+    //         of the kernels that you created above.
+
+    // Task C: Loop over the image, and calculate the final output pixel values as
+    //         described in the handout. Remember to apply the sensitivity parameter
+    //         (found in settings.cpp) *before* clamping the values.
+
 }
