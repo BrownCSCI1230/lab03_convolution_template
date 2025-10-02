@@ -76,7 +76,7 @@ void MainWindow::setupUI() {
     filterType_label->setText("No Filter Selected");
     filterType_label->setFont(header);
     imageName_label = new QLabel();
-    imageName_label->setText("(No image selected)");
+    imageName_label->setText("(No Image Selected)");
     imageName_label->setFont(italics);
 
     // Create Buttons

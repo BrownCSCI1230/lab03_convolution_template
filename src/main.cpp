@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     // Create a MainWindow
     MainWindow w;
     w.resize(800, 600);
-    w.setWindowTitle(QStringLiteral("Lab 3 Convolution"));
+    w.setWindowTitle(QStringLiteral("Lab 6 Convolution"));
     int desktopArea = QGuiApplication::primaryScreen()->size().width() *
             QGuiApplication::primaryScreen()->size().height();
     int widgetArea = w.width() * w.height();

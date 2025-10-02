@@ -13,9 +13,6 @@ void Settings::loadSettingsOrDefaults(FilterType ft) {
     /// Set Filter
     filterType = ft;
 
-    // Set default Sobel sensitivity
-    sobelSensitivity = 1.0;
-
     /// Load image settings
     QSettings s("CS123", "CS123");
     lastSelectedImage = s.value("selectedImage", "").toString();

@@ -28,7 +28,6 @@ struct Settings {
     QString lastSelectedImage;
 
     FilterType filterType; /// The selected filter @see FilterType
-    float sobelSensitivity; /// The sensitivity applied before clamping Sobel outputs
 };
 
 // The global Settings object, will be initialized by MainWindow
