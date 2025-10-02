@@ -5,12 +5,10 @@
 
 // Enumeration values for the Filters that the user can select in the GUI.
 enum FilterType { 
-    FILTER_INVERT,
-    FILTER_GRAYSCALE,
-    FILTER_BRIGHTEN,
     FILTER_IDENTITY,
     FILTER_SHIFT_LEFT,
     FILTER_SHIFT_RIGHT,
+    FILTER_SOBEL,
     FILTER_NONE /// Ignore this when implementing Convolution. This is used in the support code.
 };
 

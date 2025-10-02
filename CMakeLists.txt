@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Sets project name
-project(lab03 LANGUAGES CXX C)
+project(lab06 LANGUAGES CXX C)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
@@ -27,9 +27,8 @@ add_executable(${PROJECT_NAME}
   src/mainwindow.cpp
   src/settings.cpp
   src/canvas2d.cpp
-  src/filters/filtergray.cpp
+  src/filters/filtersobel.cpp
   src/filters/filteridentity.cpp
-  src/filters/filterinvert.cpp
   src/filters/filtershift.cpp
   src/filters/filterutils.cpp
   
@@ -38,7 +37,7 @@ add_executable(${PROJECT_NAME}
   src/RGBA.h
   src/canvas2d.h
   src/filters/filterutils.h
-  src/filters/filterbrighten.cpp
+
 )
 
 # Specifies other files

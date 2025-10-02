@@ -15,17 +15,13 @@ void MainWindow::parseCLIAndLoadSettings(QStringList args) {
     }
 
     FilterType ft = FILTER_NONE;
-    if (filterType == "grayscale") {
-        filterType_label->setText("Grayscale Filter");
-        ft = FILTER_GRAYSCALE;
+    if (filterType == "sobel") {
+        filterType_label->setText("Edge Detect Filter");
+        ft = FILTER_SOBEL;
     }
     else if (filterType == "identity") {
         filterType_label->setText("Identity Filter");
         ft = FILTER_IDENTITY;
-    }
-    else if (filterType == "invert") {
-        filterType_label->setText("Invert Filter");
-        ft = FILTER_INVERT;
     }
     else if (filterType == "shiftLeft") {
         filterType_label->setText("Shift Left Filter");
@@ -35,10 +31,7 @@ void MainWindow::parseCLIAndLoadSettings(QStringList args) {
         filterType_label->setText("Shift Right Filter");
         ft = FILTER_SHIFT_RIGHT;
     }
-    else if (filterType == "brighten") {
-        filterType_label->setText("Brighten Filter");
-        ft = FILTER_BRIGHTEN;
-    } else {
+    else {
         std::cout << "Unknown filter type: \"" << filterType << "\"" << std::endl;
     }
 

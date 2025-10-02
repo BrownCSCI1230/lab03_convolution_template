@@ -22,11 +22,9 @@ public:
 
     // TODO: Implement the functions below
     void applyFilter();
-    void filterGray();
-    void filterInvert();
-    void filterBrighten();
     void filterIdentity();
     void filterShift(ShiftDirection shiftDir);
+    void filterSobel();
 
 protected:
     std::vector<RGBA> m_data; // Image data; used in filter implementations
